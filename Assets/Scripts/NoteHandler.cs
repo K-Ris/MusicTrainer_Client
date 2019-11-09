@@ -13,14 +13,14 @@ public class NoteHandler : MonoBehaviour
     //Generate Tab for note depending on hand position
     //Set Sound
 
-    public float not_pos_c;
-    public float not_pos_d;
-    public float not_pos_e;
-    public float not_pos_f;
-    public float not_pos_g;
-    public float not_pos_a;
-    public float not_pos_b;
-    public float not_pos_c1;
+    //public float not_pos_c;
+    //public float not_pos_d;
+    public float not_pos_e = -325f;
+    public float not_pos_f = -285f;
+    public float not_pos_g = -245f;
+    public float not_pos_a = -209f;
+    public float not_pos_b = -169f;
+    public float not_pos_c1 = -134f;
     public float not_pos_d1 = -97f;
     public float not_pos_e1 = -52f;
     public float not_pos_f1 = -15f;
@@ -32,8 +32,8 @@ public class NoteHandler : MonoBehaviour
     public float not_pos_e2 = 38f;
     public float not_pos_f2 = 73f;
     public float not_pos_g2 = 112f;
-    public float not_pos_a2;
-    public float not_pos_b2;
+    public float not_pos_a2 = 145f;
+    public float not_pos_b2 = 185f;
 
     private List<BaseNote> noteList;
 
@@ -46,26 +46,27 @@ public class NoteHandler : MonoBehaviour
 
     void Awake()
     {
-        noteList = new List<BaseNote>();
-
-        //noteList.Add(new BaseNote(-5, "e", not_pos_c1));
-        //noteList.Add(new BaseNote(-4, "f", not_pos_c1));
-        //noteList.Add(new BaseNote(-3, "g", not_pos_c1));
-        //noteList.Add(new BaseNote(-2, "a", not_pos_c1));
-        //noteList.Add(new BaseNote(-1, "b", not_pos_c1));
-        noteList.Add(new BaseNote(0, "c1", not_pos_c1));
-        noteList.Add(new BaseNote(1, "d1", not_pos_d1));
-        noteList.Add(new BaseNote(2, "e1", not_pos_e1));
-        noteList.Add(new BaseNote(3, "f1", not_pos_f1));
-        noteList.Add(new BaseNote(4, "g1", not_pos_g1));
-        noteList.Add(new BaseNote(5, "a1", not_pos_a1));
-        noteList.Add(new BaseNote(6, "b1", not_pos_b1));
-        noteList.Add(new BaseNote(7, "c2", not_pos_c2));
-        noteList.Add(new BaseNote(8, "d2", not_pos_d2));
-        noteList.Add(new BaseNote(9, "e2", not_pos_e2));
-        noteList.Add(new BaseNote(10, "f2", not_pos_f2));
-        noteList.Add(new BaseNote(11, "g2", not_pos_g2));
-        //noteList.Add(new BaseNote(7, "a2", not_pos_a2));
+        noteList = new List<BaseNote>
+        {
+            new BaseNote(-5, "e", not_pos_e, 3),
+            new BaseNote(-4, "f", not_pos_f, 3),
+            new BaseNote(-3, "g", not_pos_g, 2),
+            new BaseNote(-2, "a", not_pos_a, 2),
+            new BaseNote(-1, "b", not_pos_b, 1),
+            new BaseNote(0, "c1", not_pos_c1, 1),
+            new BaseNote(1, "d1", not_pos_d1, 0),
+            new BaseNote(2, "e1", not_pos_e1, 0),
+            new BaseNote(3, "f1", not_pos_f1, 0),
+            new BaseNote(4, "g1", not_pos_g1, 0),
+            new BaseNote(5, "a1", not_pos_a1, 0),
+            new BaseNote(6, "b1", not_pos_b1, 0),
+            new BaseNote(7, "c2", not_pos_c2, 0),
+            new BaseNote(8, "d2", not_pos_d2, 0),
+            new BaseNote(9, "e2", not_pos_e2, 0),
+            new BaseNote(10, "f2", not_pos_f2, 0),
+            new BaseNote(11, "g2", not_pos_g2, 0),
+            new BaseNote(12, "a2", not_pos_a2, 1)
+        };
 
     }
 
