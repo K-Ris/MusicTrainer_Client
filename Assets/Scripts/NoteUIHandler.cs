@@ -16,6 +16,9 @@ public class NoteUIHandler : MonoBehaviour
     public GameObject helperLineLowF;
 
     public GameObject helperLineHighA;
+    public GameObject helperLineHighC;
+    public GameObject helperLineHighE;
+    public GameObject helperLineHighG;
 
 
     public GameObject tabNote1;
@@ -35,7 +38,13 @@ public class NoteUIHandler : MonoBehaviour
 
         NoteList = nh.NoteList;
 
-        int noteNum = 0;//Random.Range(1, 11);
+        createNote();
+        
+    }
+
+    public void createNote()
+    {
+        int noteNum = Random.Range(1, NoteList.Count - 1);
 
         BaseNote currentNote = NoteList[noteNum];
         float pos = currentNote.NotePos;
@@ -44,11 +53,15 @@ public class NoteUIHandler : MonoBehaviour
         helperLineLowA.SetActive(false);
         helperLineLowF.SetActive(false);
 
+
         helperLineHighA.SetActive(false);
+        helperLineHighC.SetActive(false);
+        helperLineHighE.SetActive(false);
+        helperLineHighG.SetActive(false);
 
         Debug.Log("NoteValue: " + currentNote.NoteValue + " Note: " + currentNote.NoteName);
 
-        if(currentNote.NoteValue > 5)
+        if (currentNote.NoteValue > 5)
         {
             noteUp.SetActive(false);
             noteDown.SetActive(true);
@@ -61,12 +74,30 @@ public class NoteUIHandler : MonoBehaviour
 
         if (currentNote.NoteValue > 11)
         {
-            if(currentNote.HelpLine == 1)
+            if (currentNote.HelpLine == 1)
             {
                 helperLineHighA.SetActive(true);
             }
+            else if (currentNote.HelpLine == 2)
+            {
+                helperLineHighA.SetActive(true);
+                helperLineHighC.SetActive(true);
+            }
+            else if (currentNote.HelpLine == 3)
+            {
+                helperLineHighA.SetActive(true);
+                helperLineHighC.SetActive(true);
+                helperLineHighE.SetActive(true);
+            }
+            else if (currentNote.HelpLine == 4)
+            {
+                helperLineHighA.SetActive(true);
+                helperLineHighC.SetActive(true);
+                helperLineHighE.SetActive(true);
+                helperLineHighG.SetActive(true);
+            }
         }
-        else if(currentNote.NoteValue < 1)
+        else if (currentNote.NoteValue < 1)
         {
             if (currentNote.HelpLine == 1)
             {
@@ -94,7 +125,7 @@ public class NoteUIHandler : MonoBehaviour
         tabNote5.SetActive(false);
         tabNote6.SetActive(false);
 
-        
+
 
         Debug.Log("String 6 Pos: " + nh.tabTranslator(currentNote.NoteValue, 6));
         Debug.Log("String 5 Pos: " + nh.tabTranslator(currentNote.NoteValue, 5));
@@ -104,7 +135,7 @@ public class NoteUIHandler : MonoBehaviour
         Debug.Log("String 1 Pos: " + nh.tabTranslator(currentNote.NoteValue, 1));
 
         int string6 = nh.tabTranslator(currentNote.NoteValue, 6);
-        if(string6 != -1)
+        if (string6 != -1)
         {
             tabNote6.transform.GetChild(0).GetComponent<Text>().text = string6.ToString();
             tabNote6.SetActive(true);
