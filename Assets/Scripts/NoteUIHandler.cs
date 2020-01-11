@@ -11,6 +11,8 @@ public class NoteUIHandler : MonoBehaviour
     public GameObject noteUp;
     public GameObject noteDown;
 
+    public Text noteText;
+
     public GameObject helperLineLowC;
     public GameObject helperLineLowA;
     public GameObject helperLineLowF;
@@ -47,6 +49,9 @@ public class NoteUIHandler : MonoBehaviour
         int noteNum = Random.Range(1, NoteList.Count - 1);
 
         BaseNote currentNote = NoteList[noteNum];
+
+        noteText.text = currentNote.NoteName;
+
         float pos = currentNote.NotePos;
 
         helperLineLowC.SetActive(false);
